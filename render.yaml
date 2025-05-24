@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: gt-web-studio
+    env: docker
+    plan: free
