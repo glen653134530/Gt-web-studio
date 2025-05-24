@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | GT Web Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">GT Web Studio</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
+                    <li><a href="panier.html">Mon Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products">
+        <h2>Boutique – Nos Produits</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="images/11.JPG" alt="windows 11 pro">
+                <h3>Windows 11 Pro</h3>
+                <p>Licence officielle - Activation immédiate</p>
+                <strong>40 000 FCFA</strong><br>
+                <button onclick="addToCart('Windows 11 Pro', 40000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/modem.jpg" alt="Modem 4G">
+            <h3>Modem 4G LTE Netgear</h3>
+            <p>Prix : 60 000 FCFA</p>
+                <button onclick="addToCart('Windows 10 Pro', 35000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/10.JPG" alt="windows 10">
+                <h3>Windows 10 Pro</h3>
+                <p>Licence numérique - Clé unique</p>
+                <strong>35 000 FCFA</strong><br>
+                <button onclick="addToCart('Windows 10 Pro', 35000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/cle.JPG" alt="cle usb">
+                <h3>Clé USB 64Go</h3>
+                <p>Transfert rapide - USB 3.0</p>
+                <strong>5 000 FCFA</strong><br>
+                <button onclick="addToCart('Clé USB 64Go', 5000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lenovo.JPG" alt="Lenovo">
+                <h3>PC Portable Lenovo</h3>
+                <p>Intel i5 – 8Go RAM – 256Go SSD</p>
+                <strong>250 000 FCFA</strong><br>
+                <button onclick="addToCart('PC Portable Lenovo', 250000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/11.JPG" alt="installation">
+                <h3>Support & installation</h3>
+                <p>Assistance à distance pour installation</p>
+                <strong>10 000 FCFA</strong><br>
+                <button onclick="addToCart('Support & installation', 10000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/licence.jpg" alt="Licence">
+                <h3>Packs logiciels étudiants</h3>
+                <p>Microsoft Office + outils essentiels</p>
+                <strong>20 000 FCFA</strong><br>
+                <button onclick="addToCart('Packs logiciels étudiants', 20000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+            <img src="images/cable.jpg" alt="Câble Ethernet">
+            <h3>Câble Ethernet CAT6</h3>
+            <p>Prix : 7 500 FCFA</p>
+            <button onclick="addToCart('Câble Ethernet CAT6', 7500)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/modem_mobile.jpg" alt="Modem Mobile">
+            <h3>Antenne Model Yagui</h3>
+            <p>Prix : 5 000 FCFA</p>
+            <button onclick="addToCart('Modem 4G Portable TP-Link', 38000)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/modem_mobile1.jpg" alt="Modem Mobile">
+            <h3>Modem 4G Portable TP-Link</h3>
+            <p>Prix : 38 000 FCFA</p>
+            <button onclick="addToCart('Modem 4G Portable TP-Link', 38000)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/chageur1.JPG" alt="chageur">
+            <h3>chageur type C avec boitier</h3>
+            <p>Prix : 2 500 FCFA</p>
+            <button onclick="addToCart('chageur type c', 2500)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/ecouteur1.JPG" alt="ecouteur">
+            <h3>ecouteur sans fil </h3>
+            <p>Prix : 7 000 FCFA</p>
+            <button onclick="addToCart('Ecouteur sans fil', 7000)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/kit1.JPG" alt="kit">
+            <h3>ecouteur sans fil</h3>
+            <p>Prix : 5 000 FCFA</p>
+            <button onclick="addToCart('kit oreiette', 5000)">Ajouter au panier</button>
+        </div>
+         <div class="card">
+            <img src="images/montre1.JPG" alt="montre connecter">
+            <h3>montre de luxe connectable</h3>
+            <p>Prix : 10 000 FCFA</p>
+            <button onclick="addToCart('montre connecter', 10000)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/tp.jpg" alt="point dacces wiffi exterieur">
+            <h3>point dacces wiffi exterieur</h3>
+            <p>Prix : 120 000 FCFA</p>
+            <button onclick="addToCart('montre connectepoint dacces wiffi exterieur', 120000)">Ajouter au panier</button>
+        </div>
+        <div class="card">
+            <img src="images/ubu.jpg" alt=" Access point ubiquidi networks ">
+            <h3>Access point ubiquidi networks</h3>
+            <p>Prix : 120 000 FCFA</p>
+            <button onclick="addToCart('point dacces wiffi exterieur', 120000)">Ajouter au panier</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GT Web Studio – L'innovation au service de votre visibilité.</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({name, price});
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(name + " ajouté au panier !");
+        }
+    </script>
+</body>
+</html>

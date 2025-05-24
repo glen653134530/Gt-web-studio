@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier | GT Web Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-table {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .cart-table th, .cart-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .cart-table th {
+            background: #f0f0f0;
+        }
+        .total {
+            text-align: right;
+            font-size: 18px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">GT Web Studio</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
+                    <li><a href="panier.html">Mon Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products">
+        <h2>Mon Panier</h2>
+        <table class="cart-table" id="cart-table">
+            <thead>
+                <tr><th>Produit</th><th>Prix</th><th>Action</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="total" id="total">Total : 0 FCFA</div>
+        <div style="text-align: center;">
+            <a href="paiement.html" class="btn-primary">Procéder au paiement</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GT Web Studio – L'innovation au service de votre visibilité.</p>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const tbody = document.querySelector("#cart-table tbody");
+        const totalDisplay = document.getElementById("total");
+
+        function updateCartDisplay() {
+            tbody.innerHTML = "";
+            let total = 0;
+            cart.forEach((item, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${item.name}</td><td>${item.price} FCFA</td><td><button onclick="removeItem(${index})">Supprimer</button></td>`;
+                tbody.appendChild(row);
+                total += item.price;
+            });
+            totalDisplay.textContent = "Total : " + total + " FCFA";
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        updateCartDisplay();
+    </script>
+</body>
+</html>
