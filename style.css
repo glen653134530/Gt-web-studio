@@ -425,3 +425,108 @@ footer {
     }
 }
 
+.services {
+  padding: 60px 20px;
+  text-align: center;
+}
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+
+.realisations, .processus, .a-propos, .footer {
+  padding: 60px 20px;
+  text-align: center;
+}
+.realisations-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.real-item img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 300px;
+}
+.real-item p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.etapes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+.etape span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.a-propos .apropos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.a-propos img {
+  width: 300px;
+  border-radius: 8px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+
+.services h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #eceef1; 
+  padding: 30px;
+  border-radius: 8px;
+  width: calc(33.33% - 40px); 
+  min-width: 250px; 
+  box-sizing: border-box;
+}
+
+.service-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  opacity: 0.8; 
+}
+
+.service-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+
+
+
