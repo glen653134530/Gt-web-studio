@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - GT Web Studio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #0e0e52;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        section {
+            margin: 2em;
+        }
+        h2 {
+            color: #0e0e52;
+            margin-bottom: 1em;
+        }
+        .swiper {
+            width: 100%;
+            padding-bottom: 2em;
+        }
+        .swiper-slide {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .caption {
+            padding: 1em;
+            font-size: 0.9em;
+            background: #f1f1f1;
+        }
+        footer {
+            background: #0e0e52;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</link></head>
+<body>
+<header>
+<h1>Portfolio GT Web Studio</h1>
+<p>Nos réalisations organisées par type de projet</p>
+</header>
+<section>
+<h2>Sites Vitrine</h2>
+<div class="swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="Site vitrine 1" src="images/img10.jpg"/>
+<div class="caption">Site Vitrine pour entreprise locale</div>
+</div>
+<div class="swiper-slide">
+<img alt="Site vitrine 2" src="images/img11.jpg"/>
+<div class="caption">Présence web pour artisan indépendant</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2>Boutiques en ligne</h2>
+<div class="swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="E-commerce 1" src="images/img12.jpg"/>
+<div class="caption">E-commerce avec paiement intégré</div>
+</div>
+<div class="swiper-slide">
+<img alt="E-commerce 2" src="images/img13.jpg"/>
+<div class="caption">Interface fluide pour vente de vêtements</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2>Applications Web</h2>
+<div class="swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="App Web 1" src="images/img17.jpg"/>
+<div class="caption">Plateforme de gestion de projet</div>
+</div>
+<div class="swiper-slide">
+<img alt="App Web 2" src="images/img15.jpg"/>
+<div class="caption">Dashboard interactif pour PME</div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+    © 2025 GT Web Studio — L'innovation au service de votre visibilité.
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swipers = document.querySelectorAll('.swiper');
+    swipers.forEach(swiper => {
+        new Swiper(swiper, {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    });
+</script>
+</body>
+</html>

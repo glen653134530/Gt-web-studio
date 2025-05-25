@@ -1,0 +1,75 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #111;
+}
+header {
+  background: #0d1b2a;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+}
+.service {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  transition: transform 0.3s ease;
+}
+.service:hover {
+  transform: translateY(-10px);
+}
+.service h2 {
+  color: #0077ff;
+}
+.devis {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+.devis h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+form {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  gap: 15px;
+}
+form input, form select, form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #0055aa;
+}
+footer {
+  background: #0d1b2a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
