@@ -19,6 +19,7 @@
   <div id="recap"></div>
 
   <form action="process_paiement.php" method="POST">
+    <input type="hidden" name="form_type" value="Paiement"> <!-- ou Devis / Commande / Paiement -->
     <input type="text" name="nom" placeholder="Votre nom" required>
     <input type="tel" name="telephone" placeholder="Numéro Mobile Money" required>
     <select name="operateur" required>
@@ -54,6 +55,28 @@
     document.getElementById('total').value = total;
   });
   </script>
+
+  <script>
+document.querySelectorAll("form").forEach(form => {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch("https://script.google.com/macros/s/AKfycbxOL8N8XOrKpGaNJWkIO9n_t9Q8rdBBR_CDh4ssgIPmxujXqv46NtyfN4PEquDWG7tTZg/exec", {
+      method: "POST",
+      body: data
+    })
+    .then(response => response.text())
+    .then(result => {
+      alert("Formulaire envoyé avec succès !");
+      form.reset();
+    })
+    .catch(error => {
+      alert("Erreur lors de l'envoi du formulaire.");
+      console.error(error);
+    });
+  });
+});
+</script>
 
 </body>
 </html>
