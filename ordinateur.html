@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | GT Web Studio</title>
+    <link rel="stylesheet" href="assets/css/style2.css">
+    <style>
+        .card button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">GT Web Studio</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
+                    <li><a href="panier.html">Mon Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products">
+        <header>
+    <h1>Ordinateurs</h1>
+  <div class="content">
+    <p>Bienvenue dans la section <strong>Ordinateurs</strong>. Ici, vous trouverez nos meilleures offres, produits ou services associés à cette catégorie. Cette page est encore en cours d'enrichissement pour présenter nos sélections premium.</p>
+  </div>
+  </header>
+        <div class="grid">
+            <div class="card">
+                <img src="images/lap1.JPG" alt="Acer Aspire 5">
+                <h3>Acer Aspire 5</h3>
+                <p>5.8GB RAM et 512GB SSD</p>
+                <strong>450 000 FCFA</strong><br>
+                <button onclick="addToCart('Acer Aspire 5', 450000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lap2.JPG" alt="Macbook Pro 14">
+            <h3>Macbook Pro 14</h3>
+            <p>16GB RAM et 1TB SSD</p>
+            <p>Prix : 1 200 000 FCFA</p>
+                <button onclick="addToCart('<p>5.8GB RAM et 512SSD</p>', 1200000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lap3.JPG" alt="Microsoft SS 13">
+                <h3>Microsoft SS 13</h3>
+                <p>8GB RAM et 512BG SSD</p>
+                <strong>430 000 FCFA</strong><br>
+                <button onclick="addToCart('Microsoft SS 13', 450000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lap4.JPG" alt="Dell XPS 13">
+                <h3>Dell XPS 13</h3>
+                <p>16GB RAM et 512BG SSD</p>
+                <strong>1 200 000 FCFA</strong><br>
+                <button onclick="addToCart('Dell XPS 13', 1200000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lenovo.JPG" alt="Lenovo">
+                <h3>PC Portable Lenovo</h3>
+                <p>Intel i5 – 8Go RAM – 256Go SSD</p>
+                <strong>250 000 FCFA</strong><br>
+                <button onclick="addToCart('PC Portable Lenovo', 250000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lap5.JPG" alt="Samsung Galaxy Book S">
+                <h3>Samsung Galaxy Book S</h3>
+                <p>8GB RAM et 512BG SSD</p>
+                <strong>430 000 FCFA</strong><br>
+                <button onclick="addToCart('Samsung Galaxy Book S', 430000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+                <img src="images/lap6.JPG" alt="Microsoft Surface Laptop 4">
+                <h3>Microsoft Surface Laptop 4</h3>
+                <p>8GB RAM et 512BG SSD</p>
+                <strong>700 000 FCFA</strong><br>
+                <button onclick="addToCart('Microsoft Surface Laptop 4', 700000)">Ajouter au panier</button>
+            </div>
+            <div class="card">
+            <img src="images/lap7.JPG" alt="ASUS VivoBook 15">
+            <h3>ASUS VivoBook 15</h3>
+            <p>Prix : 390 000 FCFA</p>
+            <button onclick="addToCart('ASUS VivoBook 15', 390000)">Ajouter au panier</button>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GT Web Studio – L'innovation au service de votre visibilité.</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({name, price});
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(name + " ajouté au panier !");
+        }
+    </script>
+</body>
+</html>

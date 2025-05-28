@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Panier | GT Web Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
+    header { background: #fff; padding: 20px; border-bottom: 1px solid #ddd; }
+    .logo { font-weight: bold; font-size: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; padding-left: 0; }
+    nav a { text-decoration: none; color: #007acc; }
+    .cart-table { width: 100%; max-width: 800px; margin: 40px auto; border-collapse: collapse; background: white; }
+    .cart-table th, .cart-table td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+    .cart-table th { background: #007acc; color: white; }
+    .total { text-align: right; font-size: 18px; margin: 20px auto; max-width: 800px; }
+    .btn-primary { background: #28a745; color: white; padding: 10px 25px; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; }
+    .products { padding: 20px; }
+    footer { text-align: center; background: #222; color: #fff; padding: 15px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">GT Web Studio</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="panier.html">Mon Panier</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="products">
+  <h2 style="text-align:center;">Mon Panier</h2>
+  <table class="cart-table" id="cart-table">
+    <thead>
+      <tr><th>Produit</th><th>Prix</th><th>Action</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="total" id="total">Total : 0 FCFA</div>
+  <div style="text-align: center;">
+    <a href="paiement.html" class="btn-primary" onclick="sauvegarderPanier()">Procéder au paiement</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 GT Web Studio – L'innovation au service de votre visibilité.</p>
+</footer>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const tbody = document.querySelector("#cart-table tbody");
+  const totalDisplay = document.getElementById("total");
+
+  function updateCartDisplay() {
+    tbody.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+      const row = document.createElement("tr");
+      row.innerHTML = '<td colspan="3">Votre panier est vide</td>';
+      tbody.appendChild(row);
+      totalDisplay.textContent = "Total : 0 FCFA";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const nom = item.name || item.nom || "Produit inconnu";
+      const prix = parseInt(item.price || item.prix || 0);
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${nom}</td>
+        <td>${prix} FCFA</td>
+        <td><button onclick="removeItem(${index})">Supprimer</button></td>
+      `;
+      tbody.appendChild(row);
+      total += prix;
+    });
+
+    totalDisplay.textContent = "Total : " + total + " FCFA";
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartDisplay();
+  }
+
+  function sauvegarderPanier() {
+    localStorage.setItem("panier", JSON.stringify(cart));
+  }
+
+  updateCartDisplay();
+</script>
+
+</body>
+</html>

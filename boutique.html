@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GT Web Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #fefefe;
+      color: #1a1a1a;
+    }
+    header {
+      background: #f3fcff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #001f3f;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #001f3f;
+      font-weight: 500;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #f5fefc, #eaf3ff);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .hero button {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      background: #00b894;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background: #00a884;
+    }
+    .hero img {
+      max-width: 350px;
+      margin-top: 1rem;
+    }
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 2rem;
+      text-align: center;
+    }
+    .categories div {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      flex: 1;
+    }
+    .categories img {
+      width: 60px;
+      margin-bottom: 0.5rem;
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #fef9f1;
+      padding: 3rem 2rem;
+    }
+    .about .text {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    .about .text h2 {
+      margin-bottom: 1rem;
+    }
+    .about .text p {
+      font-size: 1rem;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      max-width: 350px;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 0.5rem;
+      color: #001f3f;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #001f3f;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about .text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      .categories {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">GT Web Studio</div>
+  <nav>
+    <a href="panier.html">Mon Panier</a>
+    <a href="index.html">Acceuil</a>
+   
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>L'INNOVATION AU SERVICE<br> DE VOTRE VISIBILITÉ</h1>
+    <p>Découvrez nos solutions digitales professionnelles</p>
+    <button>Espace cormertial </button>
+  </div>
+  <img src="assets/images/5.JPG" alt="Produit phare">
+</section>
+
+<section class="categories">
+  <a href="ordinateur.html" style="text-decoration: none; color: inherit;">
+  <div>
+    <img src="assets/images/1.JPG" alt="Ordinateurs">
+    <h3>Ordinateurs</h3>
+  </div>
+  </a>
+  <a href="assesoir.html" style="text-decoration: none; color: inherit;">
+  <div>
+    <img src="assets/images/2.JPG" alt="Accessoires">
+    <h3>Accessoires</h3>
+  </div>
+  </a>
+   <a href="services.html" style="text-decoration: none; color: inherit;">
+  <div>
+    <img src="assets/images/3.JPG" alt="Services">
+    <h3>Services</h3>
+  </div>
+  </a>
+</section>
+
+<section class="about">
+  <div class="text">
+    <h2>À propos</h2>
+    <p>Nous fournissons des solutions numériques innovantes pour stimuler votre croissance en ligne.</p>
+    <div class="testimonial">
+      <p>"Des services exceptionnels qui ont transformé notre présence en ligne. Hautement recommandé !"</p>
+      <strong>– Marie Dupont</strong>
+    </div>
+  </div>
+  <img src="assets/images/4.JPG" style="border-radius: 12px;" alt="À propos">
+</section>
+
+<footer>
+  &copy; 2025 GT Web Studio – Tous droits réservés.
+</footer>
+
+</body>
+</html>

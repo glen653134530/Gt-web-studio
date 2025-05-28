@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GT Web Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,19 +13,18 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/logo.png" alt="GT Web Studio"> 
+                <img src="assets/images/logo.png" alt="GT Web Studio"> 
                 
                 
             </div>
             <p>  GT Web Studio</p>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="gt_web_studio_corrected_logo_menu/index.html">Accueil</a></li>
+                    <li><a href="#Accueil">Accueil</a></li>
                     <li><a href="about.html">À propos</a></li>
                     <li><a href="service.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="gt_web_studio_corrected_logo_menu/boutique.html">Boutique</a></li>
-                    <li><a href="gt_web_studio_corrected_logo_menu/education.html">Education</a></li>
+                    <li><a href="boutique.html">Boutique</a></li>
                     <li><a href="#contact" class="btn">Contact</a></li>
                     <li><a href="t.me/Kinggken237_bot" target="_blank" class="btn client-btn">Service Client</a></li>
                 </ul>
@@ -45,14 +44,14 @@
             <p>Agence digitale premium spécialisée dans la création web et l'identité numérique.</p>
             <a href="#contact" class="btn">Nous contacter</a>
         </div>
-         <div class="slide" style="background-image: url('images/hero2.jpg')">
+         <div class="slide" style="background-image: url('assets/images/hero2.jpg')">
                 <div class="container">
                     <h1>Créations Web Sur Mesure</h1>
                     <p>Des solutions adaptées à vos besoins spécifiques.</p>
                     <a href="portfolio.html" class="btn">Voir nos réalisations</a>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('images/hero3.jpg')">
+            <div class="slide" style="background-image: url('assets/images/hero3.jpg')">
                 <div class="container">
                     <h1>Expertise Digitale</h1>
                     <p>Transformez votre présence en ligne avec notre équipe d'experts.</p>
@@ -128,15 +127,15 @@
   <h2>Nos réalisations</h2>
   <div class="realisations-grid">
     <div class="real-item">
-      <img src="images/projet-vitrine.jpg" alt="Projet vitrine">
+      <img src="assets/images/projet-vitrine.jpg" alt="Projet vitrine">
       <p>Projet Vitrine</p>
     </div>
     <div class="real-item">
-      <img src="images/imageswebsite-icon.png.jpg" alt="Projet e-commerce">
+      <img src="assets/images/imageswebsite-icon.png.jpg" alt="Projet e-commerce">
       <p>Projet E-commerce</p>
     </div>
     <div class="real-item">
-      <img src="images/identite-visuelle.jpg" alt="Identité visuelle">
+      <img src="assets/images/identite-visuelle.jpg" alt="Identité visuelle">
       <p>Identité Visuelle</p>
     </div>
   </div>
@@ -161,7 +160,7 @@
       <p>Lancement</p>
     </div>
   </div>
-  <a href="gt_web_studio_corrected_logo_menu/boutique.html" class="btn">Espace cormerciale boutique en ligne</a>
+  <a href="boutique.html" class="btn">Espace cormerciale boutique en ligne</a>
 </section>
 
     <section id="contact" class="contact">
@@ -169,18 +168,18 @@
             <h2>Contactez-nous</h2>
             <div class="divider"></div>
             
-            <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Votre email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Votre message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
+           <form id="contactform" action="contact.php" method="POST">
+  <div class="form-group">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Votre message" required></textarea>
+  </div>
+  <button type="submit" class="btn">Envoyer</button>
+</form>
         </div>
     </section>
 
@@ -196,6 +195,77 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
+<!-- Assistant virtuel flottant -->
+<style>
+#chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+#chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+#chatbot-header {
+    background: #007acc;
+    color: white;
+    padding: 0.7rem;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+#chatbot-body {
+    padding: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.chat-option {
+    background: #f1f1f1;
+    border: none;
+    margin: 5px 0;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+</style>
+
+<button id="chatbot-button">💬</button>
+<div id="chatbot-window">
+    <div id="chatbot-header">GT Web Assistant</div>
+    <div id="chatbot-body">
+        <p>Bonjour ! Comment puis-je vous aider ?</p>
+        <button class="chat-option" onclick="location.href='pages/devis.html'">Demander un devis</button>
+        <button class="chat-option" onclick="location.href='contact1.php'">Contacter un humain</button>
+        <button class="chat-option" onclick="alert('FAQ bientôt disponible !')">FAQ</button>
+    </div>
+</div>
+
+<script>
+const chatbotBtn = document.getElementById('chatbot-button');
+const chatbotWindow = document.getElementById('chatbot-window');
+chatbotBtn.onclick = () => {
+    chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>

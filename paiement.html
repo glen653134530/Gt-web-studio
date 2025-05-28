@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement Mobile Money</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #f5f5f5; }
+    h2, h3 { color: #007acc; }
+    form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; }
+    input, select, button { display: block; width: 100%; margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background-color: #ffc107; color: black; font-weight: bold; border: none; }
+    #recap { margin: 20px auto; max-width: 500px; background: #fff; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Paiement Mobile Money</h2>
+  <div id="recap"></div>
+
+  <form action="process_paiement.php" method="POST">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="tel" name="telephone" placeholder="Numéro Mobile Money" required>
+    <select name="operateur" required>
+      <option value="">Choisir un opérateur</option>
+      <option value="MTN">MTN Mobile Money</option>
+      <option value="Orange">Orange Money</option>
+    </select>
+
+    <input type="hidden" name="produits" id="produits">
+    <input type="hidden" name="total" id="total">
+
+    <button type="submit">Payer maintenant</button>
+  </form>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    let recap = '<h3>Récapitulatif de votre panier :</h3><ul>';
+    let total = 0;
+
+    panier.forEach(p => {
+      const nom = p.name || p.nom || "Produit inconnu";
+      const prix = parseInt(p.price || p.prix || 0);
+      recap += `<li>${nom} — ${prix} FCFA</li>`;
+      total += prix;
+    });
+
+    recap += `</ul><p><strong>Total : ${total} FCFA</strong></p>`;
+    document.getElementById('recap').innerHTML = recap;
+
+    document.getElementById('produits').value = panier.map(p => p.name || p.nom).join(', ');
+    document.getElementById('total').value = total;
+  });
+  </script>
+
+</body>
+</html>
