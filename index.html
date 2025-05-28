@@ -168,18 +168,18 @@
             <h2>Contactez-nous</h2>
             <div class="divider"></div>
             
-           <form id="contactform" action="contact.php" method="POST">
-  <div class="form-group">
-    <input type="text" name="nom" placeholder="Votre nom" required>
-  </div>
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Votre email" required>
-  </div>
-  <div class="form-group">
-    <textarea name="message" placeholder="Votre message" required></textarea>
-  </div>
-  <button type="submit" class="btn">Envoyer</button>
-</form>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Votre message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
         </div>
     </section>
 
@@ -257,7 +257,7 @@
     <div id="chatbot-body">
         <p>Bonjour ! Comment puis-je vous aider ?</p>
         <button class="chat-option" onclick="location.href='pages/devis.html'">Demander un devis</button>
-        <button class="chat-option" onclick="location.href='contact1.php'">Contacter un humain</button>
+        <button class="chat-option" onclick="location.href='contact.php'">Contacter un humain</button>
         <button class="chat-option" onclick="alert('FAQ bientôt disponible !')">FAQ</button>
     </div>
 </div>
