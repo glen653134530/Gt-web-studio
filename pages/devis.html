@@ -43,26 +43,34 @@
 
     <button type="submit">Envoyer la demande</button>
 </form>
+<!-- Zone d'affichage du message -->
+<div id="form-message" style="margin-top: 15px; font-weight: bold; text-align:center;"></div>
+
 <script>
-document.querySelectorAll("form").forEach(form => {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    fetch("https://script.google.com/macros/s/AKfycbxOL8N8XOrKpGaNJWkIO9n_t9Q8rdBBR_CDh4ssgIPmxujXqv46NtyfN4PEquDWG7tTZg/exec", {
-      method: "POST",
-      body: data
-    })
-    .then(response => response.text())
-    .then(result => {
-      alert("Formulaire envoyé avec succès !");
-      form.reset();
-    })
-    .catch(error => {
-      alert("Erreur lors de l'envoi du formulaire.");
-      console.error(error);
+  document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbxOL8N8XOrKpGaNJWkIO9n_t9Q8rdBBR_CDh4ssgIPmxujXqv46NtyfN4PEquDWG7tTZg/exec", {
+        method: "POST",
+        body: data
+      })
+      .then(response => response.text())
+      .then(result => {
+        const messageDiv = document.getElementById("form-message");
+        messageDiv.textContent = "✅ Formulaire envoyé avec succès !";
+        messageDiv.style.color = "green";
+        form.reset();
+      })
+      .catch(error => {
+        const messageDiv = document.getElementById("form-message");
+        messageDiv.textContent = "❌ Une erreur est survenue. Veuillez réessayer.";
+        messageDiv.style.color = "red";
+        console.error(error);
+      });
     });
   });
-});
 </script>
 
 </body>
